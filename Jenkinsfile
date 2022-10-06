@@ -20,7 +20,7 @@ pipeline
 			steps 
 			{
 				echo "Environment is"
-				echo "${environment}"
+				echo "dev"
 				bat 'mvn clean install -DskipTests'
 			
 			}
@@ -30,16 +30,16 @@ pipeline
 		stage('Test') 
 		{
 			environment {
-        			ENV_NAME = "${environment}"
-					SECURE_KEY = "${encryptedKey}"
+        			ENV_NAME = "dev"
+					SECURE_KEY = "Apisero_Dart"
     			}
 			steps 
 			{
 				
 			
 				echo 'Application in Testing Phase… '
-				echo "${environment}"
-				bat "mvn test -Dmule.env=${environment} -Dmule.encryptionKey=${encryptedKey} -Dapp.coverage=60"
+				echo "dev"
+				bat "mvn test -Dmule.env=dev -Dmule.encryptionKey=Apisero_Dart -Dapp.coverage=60"
 			
 			}
 		
@@ -61,7 +61,7 @@ pipeline
 				
 				echo 'Deploying to the configured environment….'
 				
-				bat "mvn package deploy -DmuleDeploy -DskipTests -Dmule.env=${environment} -Dmule.encryptionKey=${encryptedKey} -Dapp.coverage=60 -Denv.name=${cloudhubEnv} -Danypoint.uri=https://anypoint.mulesoft.com -Dmule.version=4.4.0 -Dcloudhub.user=${ANYPOINT_CREDENTIALS_USR} -Dcloudhub.password=${ANYPOINT_CREDENTIALS_PSW} -Dcloudhub.workerType=MICRO -Dcloudhub.workerCount=1 -Dcloudhub.region=us-east-2 -Danypoint.monitoring=false -Denv.suffix=${suffixEnv}"
+				bat "mvn package deploy -DmuleDeploy -DskipTests -Dmule.env=dev -Dmule.encryptionKey=Apisero_Dart -Dapp.coverage=60 -Denv.name=DEV -Danypoint.uri=https://anypoint.mulesoft.com -Dmule.version=4.4.0 -Dcloudhub.user=${ANYPOINT_CREDENTIALS_USR} -Dcloudhub.password=${ANYPOINT_CREDENTIALS_PSW} -Dcloudhub.workerType=MICRO -Dcloudhub.workerCount=1 -Dcloudhub.region=us-east-2 -Danypoint.monitoring=false -Denv.suffix=-dev"
 				
 			}
 		
