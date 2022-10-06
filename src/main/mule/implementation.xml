@@ -22,6 +22,6 @@ output application/json
 }]]></ee:set-payload>
 			</ee:message>
 		</ee:transform>
-		<logger level="INFO" doc:name="Log end of get ping subflow" doc:id="7a21df07-aa61-4dd6-8fbc-a736d3364141" message="end of get ping subflow" category="END"/>
+		<logger level="INFO" doc:name="Log end of get ping subflow" doc:id="7a21df07-aa61-4dd6-8fbc-a736d3364141" message="end of get ping subflow." category="END"/>
 	</sub-flow>
 </mule>
