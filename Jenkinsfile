@@ -5,7 +5,7 @@ pipeline
 	parameters 
 	{
   		string defaultValue: 'dev', description: 'Based on environment config will be taken', name: 'environment'
-		string defaultValue: 'abcd', description: 'secure encrypted key used to sensitive data encoding', name: 'encryptedKey'
+		string defaultValue: 'Apisero_Dart', description: 'secure encrypted key used to sensitive data encoding', name: 'encryptedKey'
 		string defaultValue: '-dev', description: 'use in application naming convention', name: 'suffixEnv'
 		string defaultValue: 'DEV', description: 'Runtime manager environment', name: 'cloudhubEnv'
 	}
