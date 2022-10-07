@@ -14,8 +14,7 @@ pipeline
 			{
 				
         		script 
-				{
-				   
+				{				   
 					if(env.BRANCH_NAME == null)
 					{
 						BRANCH = scm.branches[0].name
