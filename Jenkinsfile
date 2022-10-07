@@ -9,8 +9,7 @@ pipeline
 		string defaultValue: '-dev', description: 'use in application naming convention', name: 'suffixEnv'
 		string defaultValue: 'DEV', description: 'Runtime manager environment', name: 'cloudhubEnv'
 	}
-	agent any
-	
+	agent any	
 
 	stages 
 	{
