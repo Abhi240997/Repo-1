@@ -70,8 +70,7 @@ pipeline
 			
 			}
 		
-		}
-		
+		}		
 		stage('Deploy CloudHub') 
 		{
 		
